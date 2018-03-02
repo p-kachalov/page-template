@@ -4,11 +4,15 @@
   "description": "template for html/css project",
   "main": "index.js",
   "dependencies": {
-    "stylelint": "^9.1.1"
+    "gulp": "^3.9.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "stylelint": "^9.1.1",
+    "stylelint-config-standard": "^18.2.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "stylelint": "stylelint 'source/sass/**/*.scss' --syntax scss"
   },
   "repository": {
     "type": "git",
