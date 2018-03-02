@@ -1,0 +1,23 @@
+{
+  "name": "page-template",
+  "version": "1.0.0",
+  "description": "template for html/css project",
+  "main": "index.js",
+  "dependencies": {
+    "stylelint": "^9.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-kachalov/page-template.git"
+  },
+  "author": "Pavel-K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-kachalov/page-template/issues"
+  },
+  "homepage": "https://github.com/p-kachalov/page-template#readme"
+}
