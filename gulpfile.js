@@ -8,6 +8,9 @@ var autoprefixer = require("autoprefixer");
 var minify = require("gulp-csso");
 var rename = require("gulp-rename");
 var svgstore = require("gulp-svgstore");
+var posthtml = require("gulp-posthtml");
+var include = require("posthtml-include");
+var htmlmin = require("gulp-htmlmin");
 
 gulp.task("style", function() {
   gulp
@@ -31,4 +34,12 @@ gulp.task("sprite", function() {
     )
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("build/img"));
+});
+
+gulp.task("html", function() {
+  return gulp
+    .src("source/*.html")
+    .pipe(posthtml([include()]))
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest("build"));
 });
