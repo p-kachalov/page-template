@@ -7,6 +7,7 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var minify = require("gulp-csso");
 var rename = require("gulp-rename");
+var svgstore = require("gulp-svgstore");
 
 gulp.task("style", function() {
   gulp
@@ -18,4 +19,16 @@ gulp.task("style", function() {
     .pipe(minify())
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest("build/css"));
+});
+
+gulp.task("sprite", function() {
+  return gulp
+    .src("source/img/*_sp.svg")
+    .pipe(
+      svgstore({
+        inlineSvg: true
+      })
+    )
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"));
 });
